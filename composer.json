@@ -1,0 +1,23 @@
+{
+  "name": "delamatre/laravel-kms-encryption",
+  "description": "integrate aws kms with laravel",
+  "autoload": {
+    "psr-4": {
+      "KmsEncryption\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.3|^8.0",
+    "laravel/framework": "^7.0|^8.0",
+    "aws/aws-sdk-php": "^3.178.1"
+  },
+  "require-dev" : {
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "KmsEncryption\\KmsEncryptionServiceProvider"
+      ]
+    }
+  }
+}
