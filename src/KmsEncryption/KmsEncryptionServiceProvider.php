@@ -2,8 +2,6 @@
 
 namespace KmsEncryption;
 
-use App\Library\LaravelKmsEncryption\Console\Commands\KmsGenerateDataKey;
-use App\Library\LaravelKmsEncryption\Console\Commands\KmsTest;
 use Aws\Kms\Exception\KmsException;
 use Aws\Kms\KmsClient;
 use Closure;
@@ -11,6 +9,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
+use KmsEncryption\Console\Commands\KmsGenerateDataKey;
+use KmsEncryption\Console\Commands\KmsTest;
 
 class KmsEncryptionServiceProvider extends ServiceProvider
 {
