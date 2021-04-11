@@ -3,7 +3,7 @@
   "description": "integrate aws kms with laravel",
   "autoload": {
     "psr-4": {
-      "KmsEncryption\\": "src/"
+      "KmsEncryption\\": "src/KmsEncryption/"
     }
   },
   "require": {
