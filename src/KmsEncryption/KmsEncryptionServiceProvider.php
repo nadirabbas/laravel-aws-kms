@@ -24,8 +24,8 @@ class KmsEncryptionServiceProvider extends ServiceProvider
                 'version' => '2014-11-01',
                 'region' => $params['region'] ?? env('AWS_DEFAULT_REGION'),
                 'credentials' => [
-                    'key'    => $params['region']['my-access-key-id'] ?? env('AWS_ACCESS_KEY_ID') ?? null,
-                    'secret' => $params['region']['my-secret-access-key'] ?? env('AWS_SECRET_ACCESS_KEY') ?? null,
+                   'key'    => $params['credentials']['key'] ?? env('AWS_ACCESS_KEY_ID') ?? null,
+                   'secret' => $params['credentials']['secret'] ?? env('AWS_SECRET_ACCESS_KEY') ?? null,
                 ],
             ]);
 
