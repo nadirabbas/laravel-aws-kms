@@ -1,5 +1,5 @@
 {
-  "name": "nadirabbas/laravel-kms-encryption",
+  "name": "nadirabbas/laravel-aws-kms",
   "description": "integrate aws kms with laravel",
   "autoload": {
     "psr-4": {
