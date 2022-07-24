@@ -66,8 +66,8 @@ class KmsEncryptionServiceProvider extends ServiceProvider
                 'KeyId' => env('AWS_KMS_CMK'),
             ])->get('Plaintext');
 
-        }catch (KmsException $kmsException){
-            return;
+        } catch (KmsException $kmsException){
+            throw new \Exception($kmsException->getMessage());
         }
 
         $encoded = 'base64:' . base64_encode($decrypted);
