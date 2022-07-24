@@ -52,9 +52,6 @@ class KmsEncryptionServiceProvider extends ServiceProvider
             $key = base64_decode(Str::after($key, $prefix));
         }
         
-        print_r(config('app.key'));
-        print_r($key);
-
         try {
 
             // instantiate the kms client with default settings
