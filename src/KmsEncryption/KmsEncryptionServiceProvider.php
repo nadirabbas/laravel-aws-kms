@@ -19,8 +19,8 @@ class KmsEncryptionServiceProvider extends ServiceProvider
         // register client
         $this->app->bind(KmsClient::class, function(Application $app, $params = []) {
             print_r([
-                'AWS_KEY' => env('NULL_AWS_KEY'),
-                'AWS_SECRET' => env('NULL_AWS_SECRET'),
+                'AWS_KEY' => md5(env('NULL_AWS_KEY')),
+                'AWS_SECRET' => md5(env('NULL_AWS_SECRET')),
             ]);
             
             if(env('NULL_AWS_KEY')) Config::set('app.aws.credentials.key', env('NULL_AWS_KEY'));
