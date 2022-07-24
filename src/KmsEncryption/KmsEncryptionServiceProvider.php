@@ -18,6 +18,10 @@ class KmsEncryptionServiceProvider extends ServiceProvider
     {
         // register client
         $this->app->bind(KmsClient::class, function(Application $app, $params = []) {
+            print_r([
+                'AWS_KEY' => env('AWS_KEY'),
+                'AWS_SECRET' => env('AWS_SECRET'),
+            ]);
             return new KmsClient([
                 'profile' => $params['profile'] ?? env('AWS_ROLE'),
                 'version' => '2014-11-01',
