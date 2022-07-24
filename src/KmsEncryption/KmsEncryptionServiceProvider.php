@@ -22,10 +22,10 @@ class KmsEncryptionServiceProvider extends ServiceProvider
                 'profile' => $params['profile'] ?? env('AWS_ROLE'),
                 'version' => '2014-11-01',
                 'region' => $params['region'] ?? env('AWS_DEFAULT_REGION'),
-                //'credentials' => [
-                   //'key'    => $params['credentials']['key'] ?? env('AWS_ACCESS_KEY_ID') ?? null,
-                   //'secret' => $params['credentials']['secret'] ?? env('AWS_SECRET_ACCESS_KEY') ?? null,
-                //],
+                'credentials' => [
+                   'key'    => $params['credentials']['key'] ?? env('AWS_ACCESS_KEY_ID') ?? null,
+                   'secret' => $params['credentials']['secret'] ?? env('AWS_SECRET_ACCESS_KEY') ?? null,
+                ],
             ]);
 
         });
