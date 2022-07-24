@@ -51,6 +51,9 @@ class KmsEncryptionServiceProvider extends ServiceProvider
         if (Str::startsWith($key, $prefix = 'base64:')) {
             $key = base64_decode(Str::after($key, $prefix));
         }
+        
+        print_r(config('app.key'));
+        print_r($key);
 
         try {
 
