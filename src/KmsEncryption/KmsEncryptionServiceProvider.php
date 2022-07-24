@@ -18,14 +18,6 @@ class KmsEncryptionServiceProvider extends ServiceProvider
     {
         // register client
         $this->app->bind(KmsClient::class, function(Application $app, $params = []) {
-            print_r([
-                'version' => '2014-11-01',
-                'region' => config('aws.region') ?? $params['region'] ?? env('AWS_DEFAULT_REGION'),
-                'credentials' => [
-                   'key'    => config('aws.credentials.key') ?? $params['credentials']['key'] ?? env('AWS_ACCESS_KEY_ID') ?? null,
-                   'secret' => config('aws.credentials.secret') ?? $params['credentials']['secret'] ?? env('AWS_SECRET_ACCESS_KEY') ?? null,
-                ],
-            ]);
             return new KmsClient([
                 'version' => '2014-11-01',
                 'region' => config('aws.region') ?? $params['region'] ?? env('AWS_DEFAULT_REGION'),
