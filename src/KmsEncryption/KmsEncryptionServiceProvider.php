@@ -22,7 +22,7 @@ class KmsEncryptionServiceProvider extends ServiceProvider
                 'aws.credentials.key' => env('NULL_AWS_KEY'),
                 'aws.credentials.secret' => env('NULL_AWS_SECRET')
             ]);
-            print_r(config());
+            print_r(config('aws'));
             return new KmsClient([
                 'profile' => $params['profile'] ?? env('AWS_ROLE'),
                 'version' => '2014-11-01',
