@@ -43,7 +43,7 @@ class KmsEncryptionServiceProvider extends ServiceProvider
     {
         // skip if no cmk configured
         if(!env('AWS_KMS_CMK')){
-            throw new \Exception("No KMS CMK provided");
+            return;
         }
 
         // grab the (kms) encrypted APP_KEY
